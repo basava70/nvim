@@ -32,7 +32,7 @@ vim.g.vimtex_quickfix_ignore_filters = ({
   'Overfull',
 })
 
-vim.g['vimtex_context_pdf_viewer'] = 'okular'
+-- vim.g['vimtex_context_pdf_viewer'] = 'okular'
 
 -- vim.g['vimtex_complete_enabled'] = 1
 vim.g.vimtex_compiler_latexmk_engines = {

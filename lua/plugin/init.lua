@@ -5,24 +5,14 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use "nvim-lua/plenary.nvim"
 
-  -- use {
-  --   'rmehri01/onenord.nvim',
-  --   -- require('onenord').setup()
-  -- }
-  --
-  -- use{
-  --   'shaunsingh/nord.nvim',
-  --   -- require("nord").setup{}
-  -- }
-  -- use 'folke/tokyonight.nvim'
-  -- Lua
--- vim.cmd[[colorscheme tokyonight]]
---
-  -- Nordic theme
-  use{
-    'AlexvZyl/nordic.nvim',
-    require("nordic").setup{}
-  }
+  use 'AlexvZyl/nordic.nvim'
+  use 'rmehri01/onenord.nvim'
+
+  use 'shaunsingh/nord.nvim'
+
+  use 'folke/tokyonight.nvim'
+
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- telescope
   use {

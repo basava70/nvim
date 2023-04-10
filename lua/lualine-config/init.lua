@@ -35,8 +35,6 @@ local modules = lualine_require.lazy_require {
   highlight = 'lualine.highlight',
   utils = 'lualine.utils.utils',
 }
-local c = require 'nordic.colors'
--- local c = require 'onenord.colors'
 
 -- Return the current buffer's filetype icon with highlighting.
 function M:get_current_filetype_icon()
@@ -56,7 +54,7 @@ function M:get_current_filetype_icon()
 
   -- Set colors.
   local highlight_color = modules.utils.extract_highlight_colors(icon_highlight_group, 'fg')
-  local highlight_color = c.orange.bright
+  -- local highlight_color = c.orange.bright
   if highlight_color then
     local default_highlight = self:get_default_hl()
     local icon_highlight = Icon_hl_cache[highlight_color]
@@ -142,8 +140,8 @@ end
 require("lualine").setup {
   options = {
     -- icons_enabled = true,
-     theme = 'nordic',
-    theme = 'onenord',
+     -- theme = 'nordic',
+    theme = "onenord",
     component_separators = { left = '', right = ''},
     -- component_separators = { left = '', right = ''},
     -- component_separators = { left = '', right = ''},
@@ -173,7 +171,7 @@ require("lualine").setup {
         'branch',
         icon = {
           '',
-          color = { fg = c.orange.bright, gui = 'bold' },
+          -- color = { fg = c.orange.bright, gui = 'bold' },
         },
         separator = {left = ' ', right = ''},
       },
@@ -189,7 +187,7 @@ require("lualine").setup {
           '',
           align = 'left',
           color = {
-            fg = c.orange.bright,
+            -- fg = c.orange.bright,
             gui = 'bold'
           }
         },
@@ -212,7 +210,7 @@ require("lualine").setup {
           align = 'left',
           color =
           {
-            fg = c.black,
+            -- fg = c.black,
             gui = 'bold'
           }
         },

@@ -23,3 +23,4 @@ require('onenord').setup({
   custom_highlights = {}, -- Overwrite default highlight groups
   custom_colors = {}, -- Overwrite default colors
 })
+vim.cmd.colorscheme 'onenord'
