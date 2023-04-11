@@ -14,6 +14,10 @@ return require('packer').startup(function(use)
 
   use { "catppuccin/nvim", as = "catppuccin" }
 
+  use "EdenEast/nightfox.nvim" -- Packer
+
+
+
   -- telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',

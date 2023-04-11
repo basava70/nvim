@@ -67,13 +67,13 @@ end
 require('lspconfig').clangd.setup({
   single_file_support = false,
   on_attach = function(client, bufnr)
-    print('hello clangd')
+    print('Using clangd')
   end
 })
 require('lspconfig').texlab.setup({
   single_file_support = false,
   on_attach = function(client, bufnr)
-    print('hello texlab')
+    print('Using texlab')
   end
 })
 

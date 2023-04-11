@@ -1,12 +1,7 @@
 -- Requires in one place
 require('plugin')
 require('options')
--- require('colortheme')
-require('onenord-config')
--- require('nord-config')
--- require('tokyonight-config')
--- require('catppuccin-config')
--- require('nordic-config')
+require('colortheme')
 require('nvim-tree-config')
 require('treesitter-config')
 require('harpoon-config')

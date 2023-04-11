@@ -137,11 +137,12 @@ local function get_git_compare()
 
 end
 
+local color_theme = vim.g.colors_name
+print(color_theme)
 require("lualine").setup {
   options = {
-    -- icons_enabled = true,
-     -- theme = 'nordic',
-    theme = "onenord",
+    icons_enabled = true,
+    theme = color_theme,
     component_separators = { left = '', right = ''},
     -- component_separators = { left = '', right = ''},
     -- component_separators = { left = '', right = ''},

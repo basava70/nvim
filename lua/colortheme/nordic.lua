@@ -1,3 +1,4 @@
+-- Config for Alex nordic theme
 require 'nordic' .setup {
     bright_border = false,
 	telescope = {
