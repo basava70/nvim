@@ -39,6 +39,7 @@ vim.g.vimtex_compiler_latexmk_engines = {
   _ = '-pdflatex'
 }
 vim.g['vimtex_compiler_progname'] = 'nvr'
+vim.g.maplocalleader = " "
 -- vim.g['vimtex_complete_close_braces'] = 1
 --
 --

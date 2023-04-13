@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use "nvim-lua/plenary.nvim"
 
+  -- All colorschemes
   use 'AlexvZyl/nordic.nvim'
   use 'rmehri01/onenord.nvim'
 
@@ -16,7 +17,22 @@ return require('packer').startup(function(use)
 
   use "EdenEast/nightfox.nvim" -- Packer
 
+  -- which-key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      --[[ require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      } ]]
+    end
+  }
 
+  -- bufferline
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- telescope
   use {
@@ -31,7 +47,7 @@ return require('packer').startup(function(use)
   }
 
   -- harpoon
-  use 'theprimeagen/harpoon'
+  -- use 'theprimeagen/harpoon'
 
   -- undotree
   use 'mbbill/undotree'

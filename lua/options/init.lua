@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 -- map esc to jj
 local options = { noremap = true }
 vim.keymap.set("i", "jj", "<Esc>", options)
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFindFileToggle)
+-- vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFindFileToggle)
 vim.keymap.set("n", "<leader>gi", "gg=G''")
 vim.keymap.set("v", "<leader>gy", "\"+y")
 
@@ -18,14 +18,14 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- vim-maximizer
-vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximizatio
+-- vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximizatio
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- random options
 vim.opt.nu = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
