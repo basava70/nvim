@@ -195,7 +195,14 @@ require("lualine").setup {
         separator = { left = '' , right = '' },
       },
     },
-    lualine_x = {'diagnostics'},
+    lualine_x = {
+      {
+        'diagnostics',
+      },
+      {
+        -- require('auto-session-library').current_session_name,
+      },
+    },
     lualine_y = {
       {
         M.get_current_filename_with_icon,

@@ -1,8 +1,8 @@
 require("catppuccin").setup({
-    flavour = "latte", -- latte, frappe, macchiato, mocha
+    flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
-        dark = "latte",
+        dark = "macchiato",
     },
     transparent_background = false,
     show_end_of_buffer = false, -- show the '~' characters after the end of buffers
@@ -42,4 +42,6 @@ require("catppuccin").setup({
 })
 
 -- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
+vim.cmd("colorscheme catppuccin")
+local flavour = require("catppuccin").flavour
+    print(flavour)

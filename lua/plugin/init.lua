@@ -15,7 +15,9 @@ return require('packer').startup(function(use)
 
   use { "catppuccin/nvim", as = "catppuccin" }
 
-  use "EdenEast/nightfox.nvim" -- Packer
+  use "EdenEast/nightfox.nvim"
+
+  use "lunarvim/Onedarker.nvim"
 
   -- which-key
   use {
@@ -32,7 +34,7 @@ return require('packer').startup(function(use)
   }
 
   -- bufferline
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  -- use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- telescope
   use {
@@ -47,7 +49,7 @@ return require('packer').startup(function(use)
   }
 
   -- harpoon
-  -- use 'theprimeagen/harpoon'
+  use 'theprimeagen/harpoon'
 
   -- undotree
   use 'mbbill/undotree'
@@ -100,6 +102,8 @@ return require('packer').startup(function(use)
     },
   })
 
+  use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
   -- lualine
   use { 'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true },
@@ -131,5 +135,8 @@ use {
 
 -- vimtex
 use 'lervag/vimtex'
+
+-- session restore
+-- use 'rmagatti/auto-session'
 
 end)

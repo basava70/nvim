@@ -20,6 +20,17 @@ lsp.configure('lua_ls', {
   }
 })
 
+local lspkind_status, lspkind = pcall(require, "lspkind")
+if not lspkind_status then
+  return
+end
+
+-- import lspsaga safely
+local saga_status, saga = pcall(require, "lspsaga")
+if not saga_status then
+  return
+end
+
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -50,34 +61,60 @@ update_events = 'TextChanged,TextChangedI',
 store_selection_keys = "<Tab>",
 })
 
-
-
-
 require('luasnip.loaders.from_vscode').lazy_load()
 
 -- Load snippets from ~/.config/nvim/LuaSnip/
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/lspsnip/"})
 
-
-cmp.setup({
-  sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'buffer', keyword_length = 3},
-    {name = 'luasnip', keyword_length = 2},
-  },
-  mapping = {
-    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-  }
-})
-
-
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+  mapping = cmp_mappings,
+  -- sources for autocompletion
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp'},
+    {name = 'buffer'},
+    {name = 'luasnip'},
+  },
+  --[[ mapping = {
+    ['<C-j>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-k>'] = cmp_action.luasnip_jump_backward(),
+  },  ]]
+  -- configure lspkind for vs-code like icons
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      -- maxwidth = 50,
+      ellipsis_char = "...",
+    }),
+  },
+})
+
+saga.setup({
+  -- keybinds for navigation in lspsaga window
+  scroll_preview = { scroll_down = "<C-j>", scroll_up = "<C-k>" },
+  -- use enter to open file with definition preview
+  definition = {
+    edit = "<CR>",
+  },
+    ui = {
+    -- This option only works in Neovim 0.9
+    title = true,
+    -- Border type can be single, double, rounded, solid, shadow.
+    border = "rounded",
+    winblend = 0,
+    expand = "",
+    collapse = "",
+    code_action = "💡",
+    incoming = " ",
+    outgoing = " ",
+    hover = ' ',
+    colors = {
+      normal_bg = '#BF616A'
+    }
+  }, 
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -94,18 +131,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
   vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   vim.keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
-  vim.keymap.set("n", "<leader>vd", vim.cmd([[autocmd CursorHold <buffer> lua OpenDiagFloat()]]))
 end)
-
-
-OpenDiagFloat = function ()
-  for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
-    if vim.api.nvim_win_get_config(winid).zindex then
-      return
-    end
-  end
-  vim.diagnostic.open_float({focusable = false})
-end
 
 require('lspconfig').clangd.setup({
   single_file_support = false,
@@ -126,7 +152,6 @@ lsp.set_sign_icons({
   hint = '⚑',
   info = '»'
 })
-
 
 lsp.setup()
 

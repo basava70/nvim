@@ -1,3 +1,11 @@
+vim.api.nvim_create_autocmd({ 'filetype' },
+{
+  pattern = 'harpoon', callback = function()
+    vim.cmd([[highlight HarpoonBorder guibg= #2e3440]])
+    vim.cmd([[highlight HarpoonWindow guibg= #2e3440]])
+  end
+})
+
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
@@ -12,3 +20,8 @@ vim.keymap.set("n", "<A-5>", function() ui.nav_file(5) end)
 vim.keymap.set("n", "<A-6>", function() ui.nav_file(6) end)
 vim.keymap.set("n", "<A-7>", function() ui.nav_file(7) end)
 vim.keymap.set("n", "<A-8>", function() ui.nav_file(8) end)
+
+--[[ local tmux = require("haroon.tmux")
+
+vim.keymap.set("n", "<
+lua require("harpoon.tmux").gotoTerminal(1) ]]
