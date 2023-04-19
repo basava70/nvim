@@ -214,6 +214,14 @@ s({trig = "hh", snippetType = "autosnippet", regTrig = true, wordTrig = false},
 {condition = tex_utils.in_mathzone}
 ),
 
+-- _0
+s({trig = "h0", snippetType = "autosnippet", regTrig = true, wordTrig = false},
+{
+  t("_0"),
+},
+{condition = tex_utils.in_mathzone}
+),
+
 -- inf
 s({trig = "inf", snippetType = "autosnippet"},
   fmta(
@@ -268,4 +276,58 @@ s({trig = "fig", snippetType = "autosnippet"},
   {condition = line_begin}
 ),
 
+-- pi div
+s({trig = "pdiv", snippetType="autosnippet"},
+{
+  t("\\pi^\\mathrm{div}"),
+},
+{condition = tex_utils.in_mathzone}
+),
+
+-- colon
+s({trig = ":", snippetType="autosnippet"},
+{
+  t("\\colon"),
+},
+{condition = tex_utils.in_mathzone}
+),
+
+-- l2d
+s({trig = "l2d", snippetType="autosnippet"},
+{
+  t("L^2(\\Omega; \\mathbb{R}^d)"),
+},
+{condition = tex_utils.in_mathzone}
+),
+
+-- h1d
+s({trig = "h1d", snippetType="autosnippet"},
+{
+  t("H^1(\\Omega; \\mathbb{R}^d)"),
+},
+{condition = tex_utils.in_mathzone}
+),
+
+--h10d
+s({trig = "h10d", snippetType="autosnippet"},
+{
+  t("H^1_0(\\Omega; \\mathbb{R}^d)"),
+},
+{condition = tex_utils.in_mathzone}
+),
+-- h10
+s({trig = "h10", snippetType="autosnippet"},
+{
+  t("H^1_0"),
+},
+{condition = tex_utils.in_mathzone}
+),
+
+-- l20
+s({trig = "l20", snippetType="autosnippet"},
+{
+  t("L^2_0"),
+},
+{condition = tex_utils.in_mathzone}
+),
 }

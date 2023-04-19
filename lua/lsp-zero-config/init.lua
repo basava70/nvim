@@ -3,7 +3,6 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  --'typescript-language-server',
   'clangd',
   'texlab',
   'rust_analyzer',
@@ -12,12 +11,11 @@ lsp.ensure_installed({
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
   settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
+    Lua = { diagnostics = {
+      globals = { 'vim' }
     }
   }
+}
 })
 
 local lspkind_status, lspkind = pcall(require, "lspkind")
@@ -31,7 +29,7 @@ if not saga_status then
   return
 end
 
-
+local cmp_action = require('lsp-zero').cmp_action()
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -39,16 +37,16 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
+  ['<C-n>'] = cmp_action.luasnip_jump_forward(),
+  ['<C-b>'] = cmp_action.luasnip_jump_backward(),
 })
-
-local cmp_action = require('lsp-zero').cmp_action()
 
 vim.cmd[[
 " Use Tab to expand
 imap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
 smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
 ]]
--- Somewhere in your Neovim startup, e.g. init.lua
+
 require("luasnip").config.set_config({ -- Setting LuaSnip config
 
 -- Enable autotriggered snippets
@@ -69,8 +67,13 @@ require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/lspsnip/"}
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
+vim.cmd [[
+set completeopt=menuone,noinsert,noselect
+highlight! default link CmpItemKind CmpItemMenuDefault
+]]
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings,
+
   -- sources for autocompletion
   sources = {
     {name = 'path'},
@@ -78,10 +81,7 @@ lsp.setup_nvim_cmp({
     {name = 'buffer'},
     {name = 'luasnip'},
   },
-  --[[ mapping = {
-    ['<C-j>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-k>'] = cmp_action.luasnip_jump_backward(),
-  },  ]]
+
   -- configure lspkind for vs-code like icons
   formatting = {
     format = lspkind.cmp_format({
@@ -89,6 +89,16 @@ lsp.setup_nvim_cmp({
       -- maxwidth = 50,
       ellipsis_char = "...",
     }),
+  },
+  window = {
+    completion = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+    },
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+    },
   },
 })
 
@@ -99,7 +109,7 @@ saga.setup({
   definition = {
     edit = "<CR>",
   },
-    ui = {
+  ui = {
     -- This option only works in Neovim 0.9
     title = true,
     -- Border type can be single, double, rounded, solid, shadow.
@@ -114,7 +124,7 @@ saga.setup({
     colors = {
       normal_bg = '#BF616A'
     }
-  }, 
+  },
 })
 
 lsp.on_attach(function(client, bufnr)
