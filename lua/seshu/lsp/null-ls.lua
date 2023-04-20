@@ -7,6 +7,7 @@ end
 -- for conciseness
 local formatting = null_ls.builtins.formatting -- to setup formatters
 local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+local code_actions = null_ls.builtins.code_actions -- to setup code action
 
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -33,6 +34,8 @@ null_ls.setup({
 		diagnostics.proselint, -- tex linter
 		diagnostics.clang_check, -- cpp linter
 		diagnostics.cmake_lint, -- cmake linter
+
+		code_actions.proselint, -- tex code action
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
