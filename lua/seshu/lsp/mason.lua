@@ -35,15 +35,16 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"prettier", -- ts/js formatter
 		"stylua", -- lua formatter
-		"eslint_d", -- ts/js linter
 		"clang_format", -- cpp formatter
 		"cmake_format", -- cmake formatter
 		"latexindent", -- tex formatter
 		"bibclean", -- bib formatter
-		--
+
 		"proselint", -- tex linter
 		"clang_check", -- cpp linter
 		"cmake_lint", -- cmake linter
+		"eslint_d", -- ts/js linter
+		"selene", -- lua linter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

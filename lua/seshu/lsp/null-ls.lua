@@ -25,17 +25,19 @@ null_ls.setup({
 		formatting.cmake_format, -- cmake formatter
 		formatting.latexindent, -- tex formatter
 
-		diagnostics.eslint_d.with({ -- js/ts linter
+		code_actions.proselint, -- tex code action
+
+		diagnostics.proselint, -- tex linter
+		diagnostics.clang_check, -- cpp linter
+		diagnostics.cmake_lint, -- cmake linter
+		-- diagnostics.selene, -- lua linter
+
+		--[[ diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)
 				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
 			end,
-		}),
-		diagnostics.proselint, -- tex linter
-		diagnostics.clang_check, -- cpp linter
-		diagnostics.cmake_lint, -- cmake linter
-
-		code_actions.proselint, -- tex code action
+		}), ]]
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)

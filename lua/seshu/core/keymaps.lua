@@ -6,9 +6,8 @@ local options = { noremap = true }
 vim.keymap.set("i", "jj", "<Esc>", options)
 -- vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFindFileToggle)
 vim.keymap.set("n", "<leader>gi", "gg=G''")
-vim.keymap.set("v", "<leader>gy", "\"+y")
-
-
+vim.keymap.set("v", "<leader>gy", '"+y')
+vim.keymap.set("n", "<leader>nl", vim.cmd.NullLsInfo)
 
 --primegean keymaps vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
@@ -61,5 +60,3 @@ vim.o.cursorline = true
 vim.o.cmdheight = 2
 
 vim.o.syntax = true
-
-
