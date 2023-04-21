@@ -20,7 +20,6 @@ null_ls.setup({
 		--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
-		formatting.bibclean, -- bib formatter
 		formatting.clang_format, -- cpp formatter
 		formatting.cmake_format, -- cmake formatter
 		formatting.latexindent, -- tex formatter
@@ -28,9 +27,7 @@ null_ls.setup({
 		code_actions.proselint, -- tex code action
 
 		diagnostics.proselint, -- tex linter
-		diagnostics.clang_check, -- cpp linter
 		diagnostics.cmake_lint, -- cmake linter
-		-- diagnostics.selene, -- lua linter
 
 		--[[ diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)

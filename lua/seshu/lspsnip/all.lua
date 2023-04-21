@@ -82,6 +82,19 @@ return {
 		t("\\Phi"),
 	}),
 
+	-- psi
+	s({ trig = ";s", snippetType = "autosnippet" }, {
+		t("\\psi"),
+	}),
+	--
+	-- Psi
+	s({ trig = ";S", snippetType = "autosnippet" }, {
+		t("\\Psi"),
+	}),
+
+	-------------------------------------------------------------
+	-------------------------------------------------------------
+
 	s(
 		{ trig = "([^%a])mm", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
 		fmta("<>$<>$", {
@@ -264,28 +277,45 @@ return {
 	}, { condition = tex_utils.in_mathzone }),
 
 	-- l2d
-	s({ trig = "l2d", snippetType = "autosnippet" }, {
-		t("L^2(\\Omega; \\mathbb{R}^d)"),
+	s({ trig = "L2", snippetType = "autosnippet" }, {
+		t("\\mathbf{L}^2(\\Omega; \\mathbb{R}^d)"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- l02
+	s({ trig = "l02", snippetType = "autosnippet" }, {
+		t("L^2_0"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- l20d
+	s({ trig = "L02", snippetType = "autosnippet" }, {
+		t("\\mathbf{L}^2_0(\\Omega; \\mathbb{R}^d)"),
 	}, { condition = tex_utils.in_mathzone }),
 
 	-- h1d
-	s({ trig = "h1d", snippetType = "autosnippet" }, {
-		t("H^1(\\Omega; \\mathbb{R}^d)"),
+	s({ trig = "H1", snippetType = "autosnippet" }, {
+		t("\\mathbf{H}^1(\\Omega; \\mathbb{R}^d)"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- hcurld
+	s({ trig = "Hcurl", snippetType = "autosnippet" }, {
+		t("\\mathbf{H}^\\mathrm{curl}(\\Omega; \\mathbb{R}^d)"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- h0curld
+	s({ trig = "H0curl", snippetType = "autosnippet" }, {
+		t("\\mathbf{H}^\\mathrm{curl}_0(\\Omega; \\mathbb{R}^d)"),
 	}, { condition = tex_utils.in_mathzone }),
 
 	--h10d
-	s({ trig = "h10d", snippetType = "autosnippet" }, {
-		t("H^1_0(\\Omega; \\mathbb{R}^d)"),
+	s({ trig = "H01", snippetType = "autosnippet" }, {
+		t("\\mathbf{H}^1_0(\\Omega; \\mathbb{R}^d)"),
 	}, { condition = tex_utils.in_mathzone }),
 	-- h10
-	s({ trig = "h10", snippetType = "autosnippet" }, {
+	s({ trig = "h01", snippetType = "autosnippet" }, {
 		t("H^1_0"),
 	}, { condition = tex_utils.in_mathzone }),
 
 	-- l20
-	s({ trig = "l20", snippetType = "autosnippet" }, {
-		t("L^2_0"),
-	}, { condition = tex_utils.in_mathzone }),
 
 	-- int_Omega
 	s({ trig = "intO", snippetType = "autosnippet" }, {
