@@ -23,7 +23,7 @@ mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
 		"clangd",
-		"texlab",
+		"ltex",
 		"lua_ls",
 	},
 	-- auto-install configured servers (with lspconfig)

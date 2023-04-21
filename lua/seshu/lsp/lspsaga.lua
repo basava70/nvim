@@ -43,7 +43,7 @@ saga.setup({
 		},
 	},
 	definition = {
-		edit = "<CR>",
+		edit = "<C-y>",
 		-- edit = "<C-c>o",
 		vsplit = "<C-c>v",
 		split = "<C-c>i",

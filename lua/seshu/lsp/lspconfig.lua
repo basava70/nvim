@@ -49,10 +49,15 @@ lspconfig["clangd"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["texlab"].setup({
+lspconfig["ltex"].setup({
 	capabilities = capabilities,
 	single_file_support = false,
 	on_attach = on_attach,
+	settings = {
+		ltex = {
+			language = "en-GB",
+		},
+	},
 })
 
 -- configure lua server (with special settings)
