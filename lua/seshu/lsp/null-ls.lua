@@ -7,7 +7,7 @@ end
 -- for conciseness
 local formatting = null_ls.builtins.formatting -- to setup formatters
 local diagnostics = null_ls.builtins.diagnostics -- to setup linters
-local code_actions = null_ls.builtins.code_actions -- to setup code action
+-- local code_actions = null_ls.builtins.code_actions -- to setup code action
 
 -- to setup format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -24,9 +24,10 @@ null_ls.setup({
 		formatting.cmake_format, -- cmake formatter
 		formatting.latexindent, -- tex formatter
 
-		code_actions.proselint, -- tex code action
+		-- code_actions.proselint, -- tex code action
 
 		diagnostics.proselint, -- tex linter
+		-- diagnostics.chktex, -- tex linter
 		diagnostics.cmake_lint, -- cmake linter
 		diagnostics.cpplint, -- cpp linter
 

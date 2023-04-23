@@ -49,7 +49,37 @@ lspconfig["clangd"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["ltex"].setup({
+lspconfig["texlab"].setup({
+	capabilities = capabilities,
+	single_file_support = false,
+	on_attach = on_attach,
+	settings = {
+		texlab = {
+			auxDirectory = ".",
+			bibtexFormatter = "texlab",
+			build = {
+				args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+				executable = "latexmk",
+				forwardSearchAfter = false,
+				onSave = false,
+			},
+			chktex = {
+				onEdit = false,
+				onOpenAndSave = false,
+			},
+			diagnosticsDelay = 300,
+			formatterLineLength = 80,
+			forwardSearch = {
+				args = {},
+			},
+			latexFormatter = "latexindent",
+			latexindent = {
+				modifyLineBreaks = false,
+			},
+		},
+	},
+})
+--[[ lspconfig["ltex"].setup({
 	capabilities = capabilities,
 	single_file_support = false,
 	on_attach = on_attach,
@@ -58,7 +88,7 @@ lspconfig["ltex"].setup({
 			language = "en-GB",
 		},
 	},
-})
+}) ]]
 
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
