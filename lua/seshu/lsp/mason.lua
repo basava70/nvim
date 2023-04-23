@@ -41,6 +41,7 @@ mason_null_ls.setup({
 
 		"proselint", -- tex linter
 		"cmake_lint", -- cmake linter
+		"cpplint", -- cpp linter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

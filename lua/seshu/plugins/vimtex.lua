@@ -25,6 +25,8 @@ vim.g.vimtex_syntax_conceal_disable = 1
   'Token not allowed in a PDF string',
 }) ]]
 
+-- vim.g.vimtex_complete_bib = 1
+
 vim.g.vimtex_quickfix_ignore_filters = {
 	"hyperref",
 	"Warning",

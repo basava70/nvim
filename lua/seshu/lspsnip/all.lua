@@ -222,6 +222,16 @@ return {
 		t("_0"),
 	}, { condition = tex_utils.in_mathzone }),
 
+	-- (
+	s({ trig = "(", snippetType = "autosnippet" }, {
+		t("\\left("),
+	}, { condition = tex_utils.in_mathzone }),
+
+	--)
+	s({ trig = ")", snippetType = "autosnippet" }, {
+		t("\\right)"),
+	}, { condition = tex_utils.in_mathzone }),
+
 	-- inf
 	s(
 		{ trig = "inf", snippetType = "autosnippet" },
@@ -345,15 +355,5 @@ return {
 	-- dx
 	s({ trig = "dd", snippetType = "autosnippet" }, {
 		t("\\,\\mathrm{d}"),
-	}, { condition = tex_utils.in_mathzone }),
-
-	-- (
-	s({ trig = "(", snippetType = "autosnippet" }, {
-		t("\\left("),
-	}, { condition = tex_utils.in_mathzone }),
-
-	--)
-	s({ trig = ")", snippetType = "autosnippet" }, {
-		t("\\right)"),
 	}, { condition = tex_utils.in_mathzone }),
 }

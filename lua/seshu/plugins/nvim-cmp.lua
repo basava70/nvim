@@ -49,6 +49,7 @@ cmp.setup({
 		{ name = "luasnip", option = { show_autosnippets = true } }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
+		{ name = "omni" }, -- for latex omni
 	}),
 	-- configure lspkind for vs-code like icons
 	formatting = {
