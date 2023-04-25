@@ -79,7 +79,8 @@ lspconfig["texlab"].setup({
 		},
 	},
 })
---[[ lspconfig["ltex"].setup({
+
+lspconfig["ltex"].setup({
 	capabilities = capabilities,
 	single_file_support = false,
 	on_attach = on_attach,
@@ -88,7 +89,7 @@ lspconfig["texlab"].setup({
 			language = "en-GB",
 		},
 	},
-}) ]]
+})
 
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({

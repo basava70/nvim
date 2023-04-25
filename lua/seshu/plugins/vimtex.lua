@@ -26,6 +26,7 @@ vim.g.vimtex_syntax_conceal_disable = 1
 }) ]]
 
 -- vim.g.vimtex_complete_bib = 1
+vim.cmd([[let g:vimtex_grammar_textidote = {'jar': '/opt/textidote/textidote.jar'}]])
 
 vim.g.vimtex_quickfix_ignore_filters = {
 	"hyperref",

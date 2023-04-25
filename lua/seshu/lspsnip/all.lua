@@ -52,46 +52,65 @@ return {
 	),
 
 	-- Examples of Greek letter snippets, autotriggered for efficiency
+	-- alpha
 	s({ trig = ";a", snippetType = "autosnippet" }, {
 		t("\\alpha"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- beta
 	s({ trig = ";b", snippetType = "autosnippet" }, {
 		t("\\beta"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- gamma
 	s({ trig = ";g", snippetType = "autosnippet" }, {
 		t("\\gamma"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
 
 	-- lambda
 	s({ trig = ";l", snippetType = "autosnippet" }, {
 		t("\\lambda"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
 
 	-- Omgea
 	s({ trig = ";O", snippetType = "autosnippet" }, {
 		t("\\Omega"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
 
 	-- phi
 	s({ trig = ";p", snippetType = "autosnippet" }, {
 		t("\\phi"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
 
 	-- Phi
 	s({ trig = ";P", snippetType = "autosnippet" }, {
 		t("\\Phi"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
 
 	-- psi
 	s({ trig = ";s", snippetType = "autosnippet" }, {
 		t("\\psi"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
 	--
 	-- Psi
 	s({ trig = ";S", snippetType = "autosnippet" }, {
 		t("\\Psi"),
-	}),
+	}, { condition = tex_utils.in_mathzone }),
 
+	-- nabla
+	s({ trig = ";n", snippetType = "autosnippet" }, {
+		t("\\nabla"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- \cdot
+	s({ trig = ".", snippetType = "autosnippet" }, {
+		t("\\!\\cdot"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- \cdots
+	s({ trig = "s.", snippetType = "autosnippet" }, {
+		t("\\cdots"),
+	}, { condition = tex_utils.in_mathzone }),
 	-------------------------------------------------------------
 	-------------------------------------------------------------
 
