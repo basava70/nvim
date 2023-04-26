@@ -80,16 +80,28 @@ lspconfig["texlab"].setup({
 	},
 })
 
+-- Adding path for custom dictionary
+--[[ local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+local words = {}
+-- print(path)
+
+for word in io.open(path, "r"):lines() do
+	table.insert(words, word)
+end
+
 lspconfig["ltex"].setup({
 	capabilities = capabilities,
 	single_file_support = false,
 	on_attach = on_attach,
 	settings = {
 		ltex = {
-			language = "en-GB",
+      language = "en-US",
+			 dictionary = {
+				["en-US"] = words,
+			},
 		},
 	},
-})
+}) ]]
 
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
