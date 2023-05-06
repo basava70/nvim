@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 -- map esc to jj
 local options = { noremap = true }
 vim.keymap.set("i", "jj", "<Esc>", options)
--- vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFindFileToggle)
+vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFindFileToggle)
 vim.keymap.set("n", "<leader>gi", "gg=G''")
 vim.keymap.set("v", "<leader>gy", '"+y')
 vim.keymap.set("n", "<leader>nl", vim.cmd.NullLsInfo)
@@ -62,3 +62,4 @@ vim.o.cursorline = true
 vim.o.cmdheight = 2
 
 vim.o.syntax = true
+vim.g.loaded_netrw = 1
