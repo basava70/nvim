@@ -8,6 +8,8 @@ vim.keymap.set("i", "jj", "<Esc>", options)
 vim.keymap.set("n", "<leader>gi", "gg=G''")
 vim.keymap.set("v", "<leader>gy", '"+y')
 vim.keymap.set("n", "<leader>nl", vim.cmd.NullLsInfo)
+vim.keymap.set("n", "<leader>li", vim.cmd.LspInfo)
+vim.keymap.set("n", "<leader>ww", [[:set spell<CR>]])
 
 --primegean keymaps vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
