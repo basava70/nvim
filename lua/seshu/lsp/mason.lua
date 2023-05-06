@@ -24,7 +24,7 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"clangd",
 		"texlab",
-		-- "ltex",
+		"ltex",
 		"lua_ls",
 	},
 	-- auto-install configured servers (with lspconfig)
@@ -40,8 +40,8 @@ mason_null_ls.setup({
 		"cmake_format", -- cmake formatter
 		"latexindent", -- tex formatter
 
-		-- "chktex", -- tex linter
-		"proselint", -- tex linter
+		"chktex", -- tex linter
+		-- "proselint", -- tex linter
 		"cmake_lint", -- cmake linter
 		"cpplint", -- cpp linter
 	},

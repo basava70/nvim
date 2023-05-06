@@ -103,7 +103,7 @@ return {
 	}, { condition = tex_utils.in_mathzone }),
 
 	-- \cdot
-	s({ trig = ".", snippetType = "autosnippet" }, {
+	s({ trig = "." }, {
 		t("\\!\\cdot"),
 	}, { condition = tex_utils.in_mathzone }),
 
@@ -242,18 +242,18 @@ return {
 	}, { condition = tex_utils.in_mathzone }),
 
 	-- (
-	s({ trig = "(", snippetType = "autosnippet" }, {
+	s({ trig = "(" }, {
 		t("\\left("),
 	}, { condition = tex_utils.in_mathzone }),
 
 	--)
-	s({ trig = ")", snippetType = "autosnippet" }, {
+	s({ trig = ")" }, {
 		t("\\right)"),
 	}, { condition = tex_utils.in_mathzone }),
 
 	-- inf
 	s(
-		{ trig = "inf", snippetType = "autosnippet" },
+		{ trig = "([^%\\])inf", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
 		fmta("\\inf\\limits_{<>}", {
 			i(1),
 		}),
@@ -309,6 +309,11 @@ return {
 	s({ trig = "L2", snippetType = "autosnippet" }, {
 		t("\\mathbf{L}^2(\\Omega; \\mathbb{R}^d)"),
 	}, { condition = tex_utils.in_mathzone }),
+	--
+	-- l2
+	s({ trig = "l2", snippetType = "autosnippet" }, {
+		t("L^2(\\Omega)"),
+	}, { condition = tex_utils.in_mathzone }),
 
 	-- l02
 	s({ trig = "l02", snippetType = "autosnippet" }, {
@@ -323,6 +328,26 @@ return {
 	-- h1d
 	s({ trig = "H1", snippetType = "autosnippet" }, {
 		t("\\mathbf{H}^1(\\Omega; \\mathbb{R}^d)"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- hdivd
+	s({ trig = "Hdiv", snippetType = "autosnippet" }, {
+		t("\\mathbf{H}^\\mathrm{div}(\\Omega; \\mathbb{R}^d)"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- H0divd
+	s({ trig = "H0div", snippetType = "autosnippet" }, {
+		t("\\mathbf{H}_0^\\mathrm{div}(\\Omega; \\mathbb{R}^d)"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- hdiv
+	s({ trig = "hdiv", snippetType = "autosnippet" }, {
+		t("H^\\mathrm{div}(\\Omega)"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- h0div
+	s({ trig = "h0div", snippetType = "autosnippet" }, {
+		t("H_0^\\mathrm{div}(\\Omega)"),
 	}, { condition = tex_utils.in_mathzone }),
 
 	-- hcurld
@@ -344,8 +369,6 @@ return {
 		t("H^1_0"),
 	}, { condition = tex_utils.in_mathzone }),
 
-	-- l20
-
 	-- int_Omega
 	s({ trig = "intO", snippetType = "autosnippet" }, {
 		t("\\int_\\Omega"),
@@ -366,13 +389,42 @@ return {
 		t("\\nabla \\cdot"),
 	}, { condition = tex_utils.in_mathzone }),
 
-	-- grad operator
-	s({ trig = "opgrad", snippetType = "autosnippet" }, {
-		t("\\nabla"),
-	}, { condition = tex_utils.in_mathzone }),
-
 	-- dx
 	s({ trig = "dd", snippetType = "autosnippet" }, {
 		t("\\,\\mathrm{d}"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- normal vector
+	s({ trig = "hn", snippetType = "autosnippet" }, {
+		t("\\hat{\\mathbf{n}}"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- hat T
+	s({ trig = "ht", snippetType = "autosnippet" }, {
+		t("\\hat{T}"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- hat x
+	s({ trig = "hx", snippetType = "autosnippet" }, {
+		t("\\hat{x}"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- hat
+	s(
+		{ trig = "hat", snippetType = "autosnippet" },
+		fmta("\\hat{<>}", {
+			i(1),
+		}),
+		{ condition = tex_utils.in_mathzone }
+	),
+
+	-- setminus
+	s({ trig = "sminus", snippetType = "autosnippet" }, {
+		t("\\setminus"),
+	}, { condition = tex_utils.in_mathzone }),
+
+	-- pdiv
+	s({ trig = "pdiv", snippetType = "autosnippet" }, {
+		t("\\pi^\\mathrm{div}"),
 	}, { condition = tex_utils.in_mathzone }),
 }

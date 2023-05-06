@@ -23,6 +23,7 @@ null_ls.setup({
 		formatting.clang_format, -- cpp formatter
 		formatting.cmake_format, -- cmake formatter
 		formatting.latexindent, -- tex formatter
+		formatting.bibclean, -- bib formatter
 
 		-- code_actions.proselint, -- tex code action
 

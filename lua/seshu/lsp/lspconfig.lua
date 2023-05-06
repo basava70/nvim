@@ -80,13 +80,26 @@ lspconfig["texlab"].setup({
 	},
 })
 
+-- add vim user dictionary for ltex-ls
+local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+local words = {}
+
+for word in io.open(path, "r"):lines() do
+	table.insert(words, word)
+end
+
 lspconfig["ltex"].setup({
 	capabilities = capabilities,
 	single_file_support = false,
 	on_attach = on_attach,
 	settings = {
 		ltex = {
-			language = "en-GB",
+			disabledRules = {
+				["en-US"] = { "PROFANITY" },
+			},
+			dictionary = {
+				["en-US"] = words,
+			},
 		},
 	},
 })
