@@ -4,7 +4,18 @@ vim.g.mapleader = " "
 -- map esc to jj
 local options = { noremap = true }
 vim.keymap.set("i", "jj", "<Esc>", options)
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeFindFileToggle)
+vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>o", function()
+	if vim.bo.filetype == "NvimTree" then
+		vim.cmd.wincmd("p")
+	else
+		vim.cmd("NvimTreeFocus")
+	end
+end)
+
+-- Toggleterm
+vim.keymap.set("n", "<leader>ft", vim.cmd.ToggleTerm)
+
 vim.keymap.set("n", "<leader>gi", "gg=G''")
 vim.keymap.set("v", "<leader>gy", '"+y')
 vim.keymap.set("n", "<leader>nl", vim.cmd.NullLsInfo)
