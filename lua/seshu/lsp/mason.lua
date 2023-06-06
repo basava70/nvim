@@ -39,11 +39,11 @@ mason_null_ls.setup({
 		"clang_format", -- cpp formatter
 		"cmake_format", -- cmake formatter
 		"latexindent", -- tex formatter
+		"bibclean", -- bib formatter
 
 		"chktex", -- tex linter
-		-- "proselint", -- tex linter
 		"cmake_lint", -- cmake linter
-		"cpplint", -- cpp linter
+		"clang_check", -- cpp linter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

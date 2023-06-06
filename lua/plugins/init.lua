@@ -14,6 +14,8 @@ return {
 		end,
 	},
 
+	{ "max397574/better-escape.nvim", event = "InsertCharPre", opts = { timeout = 200 } },
+
 	{
 		"akinsho/toggleterm.nvim",
 		cmd = { "ToggleTerm", "TermExec" },

@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>o", function()
 end)
 
 -- Toggleterm
-vim.keymap.set("n", "<leader>ft", vim.cmd.ToggleTerm)
+vim.keymap.set("n", "<F7>", vim.cmd.ToggleTerm)
 
 vim.keymap.set("n", "<leader>gi", "gg=G''")
 vim.keymap.set("v", "<leader>gy", '"+y')

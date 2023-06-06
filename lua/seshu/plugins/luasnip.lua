@@ -12,6 +12,6 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 
 vim.cmd([[
 " Use Tab to expand
-imap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
-smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
+imap <silent><expr> kk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'kk'
+smap <silent><expr> kk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'kk'
 ]])

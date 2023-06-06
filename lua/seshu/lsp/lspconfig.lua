@@ -47,6 +47,10 @@ lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	single_file_support = false,
 	on_attach = on_attach,
+	cmd = {
+		"clangd",
+		"--offset-encoding=utf-16",
+	},
 })
 
 lspconfig["texlab"].setup({

@@ -30,7 +30,7 @@ null_ls.setup({
 		-- diagnostics.proselint, -- tex linter
 		diagnostics.chktex, -- tex linter
 		diagnostics.cmake_lint, -- cmake linter
-		diagnostics.cpplint, -- cpp linter
+		diagnostics.cppcheck, -- cpp linter
 
 		--[[ diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
