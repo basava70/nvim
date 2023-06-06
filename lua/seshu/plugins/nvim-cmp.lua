@@ -45,11 +45,11 @@ cmp.setup({
 	}),
 	-- sources for autocompletion
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" }, -- lsp
-		{ name = "luasnip", option = { show_autosnippets = true } }, -- snippets
-		{ name = "buffer" }, -- text within current buffer
-		{ name = "path" }, -- file system paths
-		{ name = "omni" }, -- for latex omni
+		{ name = "nvim_lsp", priority = 1000 }, -- lsp
+		{ name = "luasnip", option = { show_autosnippets = true }, priority = 750 }, -- snippets
+		{ name = "buffer", priority = 500 }, -- text within current buffer
+		{ name = "path", priority = 250 }, -- file system paths
+		-- { name = "omni" }, -- for latex omni
 	}),
 	-- configure lspkind for vs-code like icons
 	formatting = {

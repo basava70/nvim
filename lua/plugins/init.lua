@@ -39,22 +39,23 @@ return {
 	-- undotree
 	"mbbill/undotree",
 
-	-- autocompletion
-	"hrsh7th/nvim-cmp", -- completion plugin
-	"hrsh7th/cmp-buffer", -- source for text in buffer
-	"hrsh7th/cmp-path", -- source for file system paths
-	"hrsh7th/cmp-cmdline",
-	"hrsh7th/cmp-omni",
-	-- snippets
-	"L3MON4D3/LuaSnip", -- snippet engine
-	"saadparwaiz1/cmp_luasnip", -- for autocompletion
-	"rafamadriz/friendly-snippets", -- ful snippets
+	-- -- autocompletion
+	-- "hrsh7th/nvim-cmp", -- completion plugin
+	-- "hrsh7th/cmp-buffer", -- source for text in buffer
+	-- "hrsh7th/cmp-path", -- source for file system paths
+	-- "hrsh7th/cmp-cmdline",
+	-- "hrsh7th/cmp-omni",
+	-- -- snippets
+	-- "L3MON4D3/LuaSnip", -- snippet engine
+	-- "saadparwaiz1/cmp_luasnip", -- for autocompletion
+	-- "rafamadriz/friendly-snippets", -- ful snippets
+
 	-- managing & installing lsp servers, linters & formatters
 	"williamboman/mason.nvim", -- in charge of managing lsp servers, linters & formatters
 	"williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
 	-- configuring lsp servers
 	"neovim/nvim-lspconfig", -- easily configure language servers
-	"hrsh7th/cmp-nvim-lsp", -- for autocompletion
+	-- "hrsh7th/cmp-nvim-lsp", -- for autocompletion
 	-- lspsaga
 	{
 		"glepnir/lspsaga.nvim",
