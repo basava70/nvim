@@ -28,12 +28,21 @@ return {
 		},
 		event = "InsertEnter",
 		opts = function()
-			local cmp = require("cmp")
-			local snip_status_ok, luasnip = pcall(require, "luasnip")
-			local lspkind_status_ok, lspkind = pcall(require, "lspkind")
-			if not snip_status_ok then
+			local cmp_status, cmp = pcall(require, "cmp")
+			if not cmp_status then
 				return
 			end
+			-- import luasnip plugin safely
+			local luasnip_status, luasnip = pcall(require, "luasnip")
+			if not luasnip_status then
+				return
+			end
+			-- import lspkind plugin safely
+			local lspkind_status, lspkind = pcall(require, "lspkind")
+			if not lspkind_status then
+				return
+			end
+
 			local border_opts = {
 				border = "single",
 				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
@@ -44,6 +53,13 @@ return {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
 					end,
+				},
+				duplicates = {
+					nvim_lsp = 1,
+					luasnip = 1,
+					cmp_tabnine = 1,
+					buffer = 1,
+					path = 1,
 				},
 				window = {
 					completion = cmp.config.window.bordered(border_opts),

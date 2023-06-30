@@ -15,12 +15,12 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("seshu.core.keymaps")
+require("seshu.plugins.vimtex")
 require("lazy").setup("plugins")
 require("seshu.plugins.treesitter")
 require("seshu.plugins.undotree")
 require("seshu.plugins.lualine")
 require("seshu.plugins.indent_blankline")
-require("seshu.plugins.vimtex")
 require("seshu.plugins.which-key")
 require("seshu.plugins.nvim-cmp")
 require("seshu.plugins.luasnip")
