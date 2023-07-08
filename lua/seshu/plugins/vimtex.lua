@@ -42,5 +42,6 @@ vim.g.vimtex_quickfix_ignore_filters = {
 -- vim.g.vimtex_compiler_latexmk_engines = {
 -- 	_ = "-pdflatex",
 -- }
--- vim.g["vimtex_compiler_progname"] = "nvr"
+vim.g.tex_flavor = "latex"
+vim.g["vimtex_compiler_progname"] = "nvr"
 vim.g.maplocalleader = " "
