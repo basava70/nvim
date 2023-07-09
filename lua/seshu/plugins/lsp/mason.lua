@@ -26,6 +26,7 @@ mason_lspconfig.setup({
 		"texlab",
 		"ltex",
 		"lua_ls",
+		"pyright",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -44,6 +45,11 @@ mason_null_ls.setup({
 		"chktex", -- tex linter
 		"cmakelint", -- cmake linter
 		"cpplint", -- cpp linter
+
+		"black", -- python formatter
+		"mypy", -- python
+		"ruff", --python
+    "debugpy", -- python debugger
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

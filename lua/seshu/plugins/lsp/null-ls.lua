@@ -24,6 +24,7 @@ null_ls.setup({
 		formatting.cmake_format, -- cmake formatter
 		formatting.latexindent, -- tex formatter
 		formatting.bibclean, -- bib formatter
+		formatting.black, -- python formatter
 
 		-- code_actions.proselint, -- tex code action
 
@@ -31,6 +32,8 @@ null_ls.setup({
 		diagnostics.chktex, -- tex linter
 		diagnostics.cmake_lint, -- cmake linter
 		diagnostics.cpplint, -- cpp linter
+		diagnostics.mypy, -- python
+		diagnostics.ruff, -- python
 
 		--[[ diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)

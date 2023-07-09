@@ -84,6 +84,11 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
+	-- dap for python
+	use("mfussenegger/nvim-dap")
+	use({ "mfussenegger/nvim-dap-python", requires = { "mfussenegger/nvim-dap" } })
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+
 	-- Vimtex
 	use("lervag/vimtex")
 
