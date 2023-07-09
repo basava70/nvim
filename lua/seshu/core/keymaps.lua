@@ -39,3 +39,19 @@ keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git 
 keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+
+-- bufferline
+-- bufferline
+keymap.set("n", "<S-b>", "<cmd> enew <CR>") --"烙 new buffer"
+keymap.set("n", "<A-.>", "<cmd> BufferLineCycleNext <CR>") --"  cycle next buffer"
+keymap.set("n", "<A-,>", "<cmd> BufferLineCyclePrev <CR>") --"  cycle prev buffer"
+keymap.set("n", "<A-s-.>", "<cmd> BufferLineMoveNext <CR>") --"  cycle next buffer"
+keymap.set("n", "<A-s-,>", "<cmd> BufferLineMovePrev <CR>") --"  cycle prev buffer"
+keymap.set("n", "<A-f>", "<cmd> BufferLinePick <CR>")
+keymap.set("n", "<leader>x", "<cmd> bp|sp|bn|bd! <CR>") --"	close buffer"
+for i = 1, 9 do
+	keymap.set("n", "<A-" .. i .. ">", function()
+		require("bufferline").go_to_buffer(i)
+	end)
+	-- keymap.set("n", "<A-" .. i .. ">", "<cmd>" .. i .. "tabn<CR>")
+end
