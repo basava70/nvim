@@ -1,7 +1,7 @@
 -- PDF Viewer:
 -- http://manpages.ubuntu.com/manpages/trusty/man5/zathurarc.5.html
 vim.cmd([[filetype plugin indent on]])
-vim.g["vimtex_view_method"] = "skim"
+vim.g["vimtex_view_method"] = "zathura"
 vim.g["vimtex_quickfix_mode"] = 2
 vim.g.vimtex_quickfix_autoclose_after_keystrokes = 2
 
@@ -39,9 +39,8 @@ vim.g.vimtex_quickfix_ignore_filters = {
 -- vim.g['vimtex_context_pdf_viewer'] = 'okular'
 
 -- vim.g['vimtex_complete_enabled'] = 1
--- vim.g.vimtex_compiler_latexmk_engines = {
--- 	_ = "xelatex",
--- }
-vim.g.tex_flavor = "latex"
+vim.g.vimtex_compiler_latexmk_engines = {
+	_ = "-pdflatex",
+}
 vim.g["vimtex_compiler_progname"] = "nvr"
 vim.g.maplocalleader = " "
