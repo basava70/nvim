@@ -45,8 +45,11 @@ end
 
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
-	single_file_support = false,
-	on_attach = on_attach,
+	-- single_file_support = false,
+	on_attach = function(client, bufnr)
+		client.server_capabilities.signatureHelpProvider = false
+		on_attach(client, bufnr)
+	end,
 	cmd = {
 		"clangd",
 		"--offset-encoding=utf-16",

@@ -44,12 +44,13 @@ mason_null_ls.setup({
 
 		"chktex", -- tex linter
 		"cmakelint", -- cmake linter
-		"cpplint", -- cpp linter
+		-- "cpplint", -- cpp linter
 
 		"black", -- python formatter
 		"mypy", -- python
 		"ruff", --python
-    "debugpy", -- python debugger
+		"debugpy", -- python debugger
+		"codelldb", -- cpp debugger
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

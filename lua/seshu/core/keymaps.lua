@@ -1,7 +1,6 @@
 -- Leader map
 vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
-
 -- map esc to jj
 local options = { noremap = true }
 keymap.set("i", "jj", "<Esc>", options)
@@ -29,6 +28,7 @@ keymap.set("n", "N", "Nzzzv")
 
 -- Telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+keymap.set("n", "<leader>fG", "<cmd>Telescope git_files<cr>") -- find files within current working directory, respects .gitignore
 keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
@@ -40,7 +40,6 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
--- bufferline
 -- bufferline
 keymap.set("n", "<S-b>", "<cmd> enew <CR>") --"烙 new buffer"
 keymap.set("n", "<A-.>", "<cmd> BufferLineCycleNext <CR>") --"  cycle next buffer"
@@ -55,3 +54,11 @@ for i = 1, 9 do
 	end)
 	-- keymap.set("n", "<A-" .. i .. ">", "<cmd>" .. i .. "tabn<CR>")
 end
+
+-- dap
+keymap.set("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>") -- toggle breakpoint
+keymap.set("n", "<leader>dr", "<cmd> DapContinue <CR>") -- start or continue debugger
+-- keymap.set("n", "<leader>dso", "<cmd> DapStepOut <CR>") -- start or continue debugger
+-- keymap.set("n", "<leader>dsi", "<cmd> DapStepInto <CR>") -- start or continue debugger
+-- keymap.set("n", "<leader>do", "<cmd> DapStepOver <CR>") -- start or continue debugger
+-- keymap.set("n", "<leader>de", "<cmd> DapTerminate <CR>") -- start or continue debugger

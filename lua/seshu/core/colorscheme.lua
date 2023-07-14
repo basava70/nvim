@@ -2,8 +2,8 @@
 -- in case it isn't installed
 local status, _ = pcall(vim.cmd, "colorscheme catppuccin")
 if not status then
-  print("Colorscheme not found!") -- print error if colorscheme not installed
-  return
+	print("Colorscheme not found!") -- print error if colorscheme not installed
+	return
 end
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
