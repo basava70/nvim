@@ -31,7 +31,7 @@ null_ls.setup({
 		-- diagnostics.proselint, -- tex linter
 		diagnostics.chktex, -- tex linter
 		diagnostics.cmake_lint, -- cmake linter
-		diagnostics.cpplint, -- cpp linter
+		-- diagnostics.cpplint, -- cpp linter
 		diagnostics.mypy, -- python
 		diagnostics.ruff, -- python
 

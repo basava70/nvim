@@ -58,7 +58,7 @@ end
 -- dap
 keymap.set("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>") -- toggle breakpoint
 keymap.set("n", "<leader>dr", "<cmd> DapContinue <CR>") -- start or continue debugger
--- keymap.set("n", "<leader>dso", "<cmd> DapStepOut <CR>") -- start or continue debugger
--- keymap.set("n", "<leader>dsi", "<cmd> DapStepInto <CR>") -- start or continue debugger
--- keymap.set("n", "<leader>do", "<cmd> DapStepOver <CR>") -- start or continue debugger
--- keymap.set("n", "<leader>de", "<cmd> DapTerminate <CR>") -- start or continue debugger
+keymap.set("n", "<leader>dso", "<cmd> DapStepOut <CR>") -- start or continue debugger
+keymap.set("n", "<leader>dsi", "<cmd> DapStepInto <CR>") -- start or continue debugger
+keymap.set("n", "<leader>do", "<cmd> DapStepOver <CR>") -- start or continue debugger
+keymap.set("n", "<leader>de", "<cmd> DapTerminate <CR>") -- start or continue debugger
