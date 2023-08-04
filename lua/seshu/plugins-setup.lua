@@ -123,6 +123,12 @@ return packer.startup(function(use)
 	-- better esapce
 	use("max397574/better-escape.nvim")
 
+	-- which key
+	-- Lua
+	use({
+		"folke/which-key.nvim",
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

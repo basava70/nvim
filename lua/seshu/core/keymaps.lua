@@ -13,6 +13,8 @@ keymap.set("n", "<leader>o", function()
 	end
 end)
 
+keymap.set("n", "<leader>ps", "<cmd>PackerSync<cr>") -- PackerSync
+
 keymap.set("n", "<leader>gi", "gg=G''")
 keymap.set("v", "<leader>gy", '"+y')
 keymap.set("n", "<leader>nl", vim.cmd.NullLsInfo)
