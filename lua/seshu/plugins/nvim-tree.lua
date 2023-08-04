@@ -95,7 +95,7 @@ nvimtree.setup({ -- BEGIN_DEFAULT_OPTS
 				bookmark = "",
 				modified = "●",
 				folder = {
-					arrow_closed = "",
+					arrow_closed = "",
 					arrow_open = "",
 					default = " ",
 					open = " ",
