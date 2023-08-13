@@ -43,6 +43,9 @@ keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git bra
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
 -- bufferline
+keymap.set("n", "<leader>xl", "<cmd> BufferLineCloseLeft <CR>") -- close buffers to the left
+keymap.set("n", "<leader>xr", "<cmd> BufferLineCloseRight <CR>") -- close buffers to the left
+keymap.set("n", "<leader>xx", "<cmd> BufferLineCloseOthers <CR>") -- close buffers to the left
 keymap.set("n", "<S-b>", "<cmd> enew <CR>") --"烙 new buffer"
 keymap.set("n", "<A-.>", "<cmd> BufferLineCycleNext <CR>") --"  cycle next buffer"
 keymap.set("n", "<A-,>", "<cmd> BufferLineCyclePrev <CR>") --"  cycle prev buffer"
@@ -60,7 +63,7 @@ end
 -- dap
 keymap.set("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>") -- toggle breakpoint
 keymap.set("n", "<leader>dr", "<cmd> DapContinue <CR>") -- start or continue debugger
-keymap.set("n", "<leader>dso", "<cmd> DapStepOut <CR>") -- start or continue debugger
-keymap.set("n", "<leader>dsi", "<cmd> DapStepInto <CR>") -- start or continue debugger
-keymap.set("n", "<leader>do", "<cmd> DapStepOver <CR>") -- start or continue debugger
-keymap.set("n", "<leader>de", "<cmd> DapTerminate <CR>") -- start or continue debugger
+keymap.set("n", "<leader>dso", "<cmd> DapStepOut <CR>") -- step out
+keymap.set("n", "<leader>dsi", "<cmd> DapStepInto <CR>") -- step in
+keymap.set("n", "<leader>do", "<cmd> DapStepOver <CR>") -- step over
+keymap.set("n", "<leader>de", "<cmd> DapTerminate <CR>") -- terminate
