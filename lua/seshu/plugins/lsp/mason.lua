@@ -32,6 +32,7 @@ return {
 		"ltex",
 		"lua_ls",
         "pyright",
+        "cmake",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -43,13 +44,15 @@ return {
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
-        "pylint", -- python linter
-        "eslint_d", -- js linter
 		"latexindent", -- tex formatter
 		"bibtex-tidy", -- bibtex formatter
+        "clang-format", -- c, cpp formatter
+    "cmakelang", -- cmake formatter (linter)
 
+        "pylint", -- python linter
 		"vale", -- tex linter
 		"cmakelint", -- cmake linter
+
 		"debugpy", -- python debugger
 		"codelldb", -- cpp debugger
       },
