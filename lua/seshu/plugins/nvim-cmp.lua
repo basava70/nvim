@@ -19,6 +19,12 @@ return {
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 
+		-- Load snippets from ~/.config/nvim/LuaSnip/
+		require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/seshu/luasnip/" })
+
+		vim.opt.completeopt = "menu,menuone,noselect"
+		vim.cmd([[ highlight! default link CmpItemKind CmpItemMenuDefault ]])
+
 		cmp.setup({
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
