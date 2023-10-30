@@ -19,7 +19,6 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 opt.hlsearch = true
 opt.incsearch = true
 
-
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
 
@@ -35,3 +34,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- add scrolloff
+opt.scrolloff = 10 -- makes sure we are 10 lines from the bottom of the screen
