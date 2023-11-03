@@ -12,6 +12,8 @@ opt.smartindent = true -- use smart indent instead of autoindent
 
 -- line wrapping
 opt.wrap = false -- disable line wrapping
+-- opt.linebreak = true -- enable warping at the end of words
+-- opt.columns = 130 -- enable warping after 130 columns
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -36,4 +38,4 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.swapfile = false
 
 -- add scrolloff
-opt.scrolloff = 10 -- makes sure we are 10 lines from the bottom of the screen
+opt.scrolloff = 18 -- makes sure we are 10 lines from the bottom of the screen
