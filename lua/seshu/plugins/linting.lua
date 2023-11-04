@@ -10,8 +10,8 @@ return {
 			c = { "cpplint" },
 			cpp = { "cpplint" },
 			cuda = { "cpplint" },
-			latex = { "vale" },
-			bibtex = { "vale" },
+			-- tex = { "vale" },
+			-- bib = { "vale" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

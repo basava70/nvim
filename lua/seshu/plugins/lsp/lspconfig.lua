@@ -90,7 +90,7 @@ return {
 			settings = {
 				texlab = {
 					auxDirectory = ".",
-					bibtexFormatter = "bibtex-tidy",
+					-- bibtexFormatter = "bibtex-tidy",
 					build = {
 						args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
 						executable = "latexmk",

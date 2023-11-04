@@ -13,7 +13,7 @@ return {
 				c = { "clang_format" },
 				cpp = { "clang_format" },
 				cuda = { "clang_format" },
-				latex = { "latexindent" },
+				tex = { "latexindent" },
 				bibtex = { "bibtex-tidy" },
 				cmake = { "cmake_format" },
 			},

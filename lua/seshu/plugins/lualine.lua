@@ -17,7 +17,7 @@ return {
 
 			for _, client in pairs(buf_clients) do
 				if client.name ~= "null-ls" then
-					table.insert(buf_client_names, " " .. client.name)
+					table.insert(buf_client_names, " [" .. client.name .. "]")
 				end
 			end
 
@@ -27,7 +27,7 @@ return {
 					if type(ft_v) == "table" then
 						for _, linter in ipairs(ft_v) do
 							if buf_ft == ft_k then
-								table.insert(buf_client_names, " " .. linter)
+								table.insert(buf_client_names, " [" .. linter .. "]")
 							end
 						end
 					elseif type(ft_v) == "string" then
@@ -39,11 +39,10 @@ return {
 			end
 
 			local ok, conform = pcall(require, "conform")
-			local formatters = table.concat(conform.formatters_by_ft[vim.bo.filetype], " ")
 			if ok then
-				for formatter in formatters:gmatch("%w+") do
+				for _, formatter in pairs(conform.formatters_by_ft[vim.bo.filetype]) do
 					if formatter then
-						table.insert(buf_client_names, "󰉠 " .. formatter)
+						table.insert(buf_client_names, "󰉠 [" .. formatter .. "]")
 					end
 				end
 			end
@@ -69,25 +68,6 @@ return {
 		}
 		-------------------------------------------------------------
 
-		local space = {
-			function()
-				return " "
-			end,
-		}
-
-		local filename = {
-			"filename",
-		}
-
-		local filetype = {
-			"filetype",
-			icons_enabled = false,
-		}
-
-		local branch = {
-			"branch",
-		}
-
 		lualine.setup({
 			sections = {
 				lualine_a = {
@@ -110,14 +90,6 @@ return {
 				lualine_z = {
 					lsp,
 				},
-			},
-			inactive_sections = {
-				lualine_a = {},
-				lualine_b = {},
-				lualine_c = { "filename" },
-				lualine_x = { "location" },
-				lualine_y = {},
-				lualine_z = {},
 			},
 		})
 		-- listen lsp-progress event and refresh lualine
