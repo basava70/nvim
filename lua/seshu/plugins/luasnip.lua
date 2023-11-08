@@ -17,5 +17,10 @@ return {
 			-- Use Tab (or some other key if you prefer) to trigger visual selection
 			store_selection_keys = "<Tab>",
 		})
+		vim.cmd([[
+        " Use Tab to expand
+        imap <silent><expr> kk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'kk'
+        smap <silent><expr> kk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'kk'
+    ]])
 	end,
 }
