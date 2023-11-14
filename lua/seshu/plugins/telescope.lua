@@ -27,6 +27,12 @@ return {
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
+		local wk = require("which-key")
+		wk.register({ ["<leader>"] = {
+			f = {
+				name = "Telescope",
+			},
+		} })
 
 		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files in cwd" }) -- find files within current working directory, respects .gitignore
 		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
