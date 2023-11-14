@@ -31,7 +31,7 @@ keymap.set("n", "<A-,>", "<cmd> BufferLineCyclePrev <CR>") --"  cycle prev bu
 keymap.set("n", "<A-s-.>", "<cmd> BufferLineMoveNext <CR>") --"  move next buffer"
 keymap.set("n", "<A-s-,>", "<cmd> BufferLineMovePrev <CR>") --"  move prev buffer"
 keymap.set("n", "<A-f>", "<cmd> BufferLinePick <CR>")
-keymap.set("n", "<leader>bx", "<cmd> bp|sp|bn|bd! <CR>", { desc = "Close the current buffer" }) --"	close buffer"
+keymap.set("n", "<leader>bbx", "<cmd> bp|sp|bn|bd! <CR>", { desc = "Close the current buffer" }) --"	close buffer"
 for i = 1, 9 do
 	keymap.set("n", "<A-" .. i .. ">", function() -- chosse <A-i> to choose that buffer
 		require("bufferline").go_to_buffer(i)
