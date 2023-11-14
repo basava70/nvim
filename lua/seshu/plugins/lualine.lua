@@ -56,7 +56,7 @@ return {
 					hash[v] = true
 				end
 			end
-			local language_servers = table.concat(unique_client_names, ", ")
+			local language_servers = table.concat(unique_client_names, " ")
 
 			return language_servers
 		end
@@ -86,7 +86,15 @@ return {
 					},
 					{ "filetype" },
 				},
-				lualine_y = { "filename" },
+				lualine_y = {
+					{ "progress", separator = " ", padding = { left = 1, right = 0 } },
+					{ "location", padding = { left = 0, right = 1 } },
+					{
+						function()
+							return " " .. os.date("%R")
+						end,
+					},
+				},
 				lualine_z = {
 					lsp,
 				},

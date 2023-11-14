@@ -146,7 +146,7 @@ return {
 	),
 
 	s(
-		{ trig = "env", dscr = "A generic new environmennt", snippetType = "autosnippet" },
+		{ trig = "env", dscr = "A generic new environmennt" },
 		fmta(
 			[[
       \begin{<>}\label{<>}
@@ -280,7 +280,7 @@ return {
 
 	-- Figure environment
 	s(
-		{ trig = "fig", snippetType = "autosnippet" },
+		{ trig = "fig" },
 		fmta(
 			[[
       \begin{figure}[H]

@@ -5,7 +5,7 @@ return {
 	opts = { -- require(bufferline).setup(opts)
 		options = {
 			-- mode = "tabs",
-			separator_style = "padded_slant",
+			-- separator_style = "padded_slant",
 		},
 	},
 }
