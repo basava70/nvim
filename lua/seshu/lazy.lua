@@ -17,9 +17,9 @@ require("lazy").setup({
 	{ import = "seshu.plugins" },
 	{ import = "seshu.plugins.lsp" },
 }, {
-	install = {
-		colorscheme = { "catppuccin" },
-	},
+	-- install = {
+	-- 	colorscheme = { "tokyonight" },
+	-- },
 	checker = {
 		enabled = true,
 		notify = false,

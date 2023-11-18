@@ -10,7 +10,7 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jj" })
 
 -- copying from vim to system clipboard
-keymap.set("v", "<leader>gy", '"+y')
+keymap.set("v", "<leader>y", '"+y')
 
 -- Primegean way of adding lines with J
 keymap.set("n", "J", "mzJ`z")
@@ -41,19 +41,19 @@ end
 -- trouble
 keymap.set("n", "<leader>xx", function()
 	require("trouble").toggle()
-end)
+end, { desc = "toggle trouble list" })
 keymap.set("n", "<leader>xw", function()
 	require("trouble").toggle("workspace_diagnostics")
-end)
+end, { desc = "toggle workspace_diagnostics" })
 keymap.set("n", "<leader>xd", function()
 	require("trouble").toggle("document_diagnostics")
-end)
+end, { desc = "toggle document_diagnostics" })
 keymap.set("n", "<leader>xq", function()
 	require("trouble").toggle("quickfix")
-end)
+end, { desc = "toggle quickfix" })
 keymap.set("n", "<leader>xl", function()
 	require("trouble").toggle("loclist")
-end)
+end, { desc = "toggle loclist" })
 keymap.set("n", "gR", function()
 	require("trouble").toggle("lsp_references")
-end)
+end, { desc = "toggle lsp_references" })

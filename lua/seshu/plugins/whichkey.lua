@@ -13,10 +13,18 @@ return {
 			padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
 			winblend = 0,
 		},
-		mappings = {
-			-- b = {
-			-- 	name = "Buffers",
-			-- },
+		plugins = { spelling = true },
+		defaults = {
+			mode = { "n", "v" },
+			["<leader>b"] = { name = "Buffers" },
+			["<leader>g"] = { name = "Git" },
+			["<leader>x"] = { name = "Trouble" },
+			["<leader>s"] = { name = "Windows" },
 		},
 	},
+	config = function(_, opts)
+		local wk = require("which-key")
+		wk.setup(opts)
+		wk.register(opts.defaults)
+	end,
 }
