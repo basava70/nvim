@@ -25,7 +25,6 @@ keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }
 keymap.set("n", "<leader>bxl", "<cmd> BufferLineCloseLeft <CR>", { desc = "Close all buffers to left" }) -- close buffers to the left
 keymap.set("n", "<leader>bxr", "<cmd> BufferLineCloseRight <CR>", { desc = "Close all buffers to right" }) -- close buffers to the right
 keymap.set("n", "<leader>bxx", "<cmd> BufferLineCloseOthers <CR>", { desc = "Close all other buffers" }) -- close all buffers expect current one
-keymap.set("n", "<S-b>", "<cmd> enew <CR>") --"烙 new buffer"
 keymap.set("n", "<A-.>", "<cmd> BufferLineCycleNext <CR>") --"  cycle next buffer"
 keymap.set("n", "<A-,>", "<cmd> BufferLineCyclePrev <CR>") --"  cycle prev buffer"
 keymap.set("n", "<A-s-.>", "<cmd> BufferLineMoveNext <CR>") --"  move next buffer"
