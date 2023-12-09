@@ -38,4 +38,4 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.swapfile = false
 
 -- add scrolloff
-opt.scrolloff = 18 -- makes sure we are 10 lines from the bottom of the screen
+opt.scrolloff = 18 -- makes sure we are 18 lines from the bottom of the screen
