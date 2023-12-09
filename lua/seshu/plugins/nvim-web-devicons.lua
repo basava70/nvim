@@ -12,6 +12,12 @@ return {
 				-- color = "#f34b7d",
 				name = "Cuda",
 			},
+			["F90"] = {
+				icon = "󱈚",
+				color = "#734f96",
+				cterm_color = "97",
+				name = "Fortran",
+			},
 		})
 	end,
 }

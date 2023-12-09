@@ -6,7 +6,7 @@ return {
 		opts = {},
 		config = function()
 			-- setup must be called before loading
-			vim.cmd.colorscheme("tokyonight")
+			vim.cmd.colorscheme("tokyonight-night")
 		end,
 	},
 	{
