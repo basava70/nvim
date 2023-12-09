@@ -5,6 +5,12 @@ return {
 		priority = 1000,
 		opts = {},
 		config = function()
+			require("tokyonight").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				transparent = true,
+				style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+			})
 			-- setup must be called before loading
 			vim.cmd.colorscheme("tokyonight-night")
 		end,
@@ -15,11 +21,6 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-			})
 			-- setup must be called before loading
 			vim.cmd.colorscheme("catppuccin")
 		end,
