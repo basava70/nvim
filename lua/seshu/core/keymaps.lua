@@ -56,3 +56,7 @@ end, { desc = "toggle loclist" })
 keymap.set("n", "gR", function()
 	require("trouble").toggle("lsp_references")
 end, { desc = "toggle lsp_references" })
+
+-- formatting
+keymap.set("n", "<leader>fd", "<cmd> FormatDisable <CR>", { desc = "Disable format" }) -- disable formatting.
+keymap.set("n", "<leader>fe", "<cmd> FormatEnable <CR>", { desc = "Enable format" }) -- enable formatting.
