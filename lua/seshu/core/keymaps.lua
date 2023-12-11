@@ -5,6 +5,8 @@ local keymap = vim.keymap -- for conciseness
 
 ---------------------
 -- General Keymaps -------------------
+-- remove search highlight
+keymap.set("n", "<leader>n", "<cmd> nohlsearch <CR>", { desc = "remove search hightlight" })
 
 -- use jj to exit insert mode
 keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jj" })

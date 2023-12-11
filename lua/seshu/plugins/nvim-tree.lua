@@ -68,6 +68,6 @@ return {
 			else
 				vim.cmd("NvimTreeFocus")
 			end
-		end)
+		end, { desc = "Toggle between file explorer and buffer" })
 	end,
 }
