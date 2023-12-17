@@ -20,6 +20,11 @@ keymap.set("n", "J", "mzJ`z")
 -- Reload buffers (usage : after changing branches in git)
 keymap.set("n", "<leader>E", "<cmd> bufdo e <CR>", { desc = "reload all buffers" })
 
+-- Close all buffers and exit Neovim
+keymap.set("n", "<leader>q", "<cmd> qall <CR> ", { desc = "close all buffers" })
+-- save all buffers and exit Neovim
+keymap.set("n", "<leader>w", "<cmd> wqall <CR> ", { desc = "close all buffers" })
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
