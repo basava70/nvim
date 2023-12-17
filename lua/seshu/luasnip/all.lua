@@ -134,13 +134,13 @@ return {
 	),
 
 	s(
-		{ trig = "h1", dscr = "Top-level section", snippetType = "autosnippet" },
+		{ trig = "h1", dscr = "Top-level section" },
 		fmta([[\section{<>}]], { i(1) }),
 		{ condition = line_begin } -- set condition in the `opts` table
 	),
 
 	s(
-		{ trig = "h2", dscr = "Top-level section", snippetType = "autosnippet" },
+		{ trig = "h2", dscr = "Top-level section" },
 		fmta([[\subsection{<>}]], { i(1) }),
 		{ condition = line_begin } -- set condition in the `opts` table
 	),

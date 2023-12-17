@@ -9,7 +9,7 @@ return {
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
 				transparent = true,
-				style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+				style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
 				styles = {
 					sidebars = "transparent",
 					floats = "transparent",

@@ -17,6 +17,9 @@ keymap.set("v", "<leader>y", '"+y')
 -- Primegean way of adding lines with J
 keymap.set("n", "J", "mzJ`z")
 
+-- Reload buffers (usage : after changing branches in git)
+keymap.set("n", "<leader>E", "<cmd> bufdo e <CR>", { desc = "reload all buffers" })
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
