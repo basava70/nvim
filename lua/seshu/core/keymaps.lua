@@ -1,12 +1,14 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
-local keymap = vim.keymap -- for conciseness
+local keymap = vim.keymap -- for conciseness(" ")
 
----------------------
--- General Keymaps -------------------
+-- General Keymaps
 -- remove search highlight
 keymap.set("n", "<leader>n", "<cmd> nohlsearch <CR>", { desc = "remove search hightlight" })
+
+-- jump out of auto generated pair
+keymap.set("i", "<C-l>", "<Esc>%a", { noremap = true, silent = true })
 
 -- use jj to exit insert mode
 keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jj" })
@@ -44,9 +46,9 @@ keymap.set("n", "<A-,>", "<cmd> BufferLineCyclePrev <CR>") --"  cycle prev bu
 keymap.set("n", "<A-s-.>", "<cmd> BufferLineMoveNext <CR>") --"  move next buffer"
 keymap.set("n", "<A-s-,>", "<cmd> BufferLineMovePrev <CR>") --"  move prev buffer"
 keymap.set("n", "<A-f>", "<cmd> BufferLinePick <CR>")
-keymap.set("n", "<leader>bbx", "<cmd> bp|sp|bn|bd! <CR>", { desc = "Close the current buffer" }) --"	close buffer"
+keymap.set("n", "<leader>bbx", "<cmd> bp|sp|bn|bd! <CR>", { desc = "Close the current buffer" }) --"	close buffer"
 for i = 1, 9 do
-	keymap.set("n", "<A-" .. i .. ">", function() -- chosse <A-i> to choose that buffer
+	keymap.set("n", "<A-" .. i .. ">", function() -- choose <A-i> to choose that buffer
 		require("bufferline").go_to_buffer(i)
 	end)
 end
