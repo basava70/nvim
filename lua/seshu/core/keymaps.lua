@@ -17,6 +17,10 @@ keymap.set("v", "<leader>y", '"+y')
 -- Primegean way of adding lines with J
 keymap.set("n", "J", "mzJ`z")
 
+-- in visual mode move the block up and down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- Reload buffers (usage : after changing branches in git)
 keymap.set("n", "<leader>E", "<cmd> bufdo e <CR>", { desc = "reload all buffers" })
 
