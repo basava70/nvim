@@ -7,14 +7,11 @@ local keymap = vim.keymap -- for conciseness(" ")
 -- remove search highlight
 keymap.set("n", "<leader>n", "<cmd> nohlsearch <CR>", { desc = "remove search hightlight" })
 
--- jump out of auto generated pair
-keymap.set("i", "<C-l>", "<Esc>%a", { noremap = true, silent = true })
-
 -- use jj to exit insert mode
 keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jj" })
 
 -- copying from vim to system clipboard
-keymap.set("v", "<leader>y", '"+y')
+keymap.set("v", "<leader>y", '"+y', { desc = "Copy the selection to system clipboard" })
 
 -- Primegean way of adding lines with J
 keymap.set("n", "J", "mzJ`z")

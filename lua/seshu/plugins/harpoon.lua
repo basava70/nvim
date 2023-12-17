@@ -10,10 +10,10 @@ return {
 		end
 		map("<leader>a", function()
 			harpoon:list():append()
-		end)
+		end, { desc = "Append the buffer into harpoon list" })
 		map("<leader>h", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list(), { border = "rounded", title_pos = "center" })
-		end)
+		end, { desc = "Toggle harpoon quick menu" })
 		for i = 1, 9 do
 			map("<A-" .. i .. ">", function() -- chosse <A-i> to choose that buffer
 				harpoon:list():select(i)
