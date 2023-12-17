@@ -12,7 +12,7 @@ return {
 			harpoon:list():append()
 		end)
 		map("<leader>h", function()
-			harpoon.ui:toggle_quick_menu(harpoon:list())
+			harpoon.ui:toggle_quick_menu(harpoon:list(), { border = "rounded", title_pos = "center" })
 		end)
 		for i = 1, 9 do
 			map("<A-" .. i .. ">", function() -- chosse <A-i> to choose that buffer
