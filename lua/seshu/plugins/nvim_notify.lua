@@ -1,30 +1,25 @@
 return {
 	"rcarriga/nvim-notify",
 	event = "VeryLazy",
-	keys = {
-		{
-			"<leader>un",
-			function()
-				require("notify").dismiss({ silent = true, pending = true })
-			end,
-			desc = "Dismiss all Notifications",
-		},
-	},
+	cmd = "Notifications",
 	config = function()
 		require("notify").setup({
-			background_colour = "FloatShadow",
-			timeout = 3000,
+			background_colour = "#000",
+			fps = 30,
+			icons = {
+				DEBUG = "",
+				ERROR = "",
+				INFO = "",
+				TRACE = "",
+				WARN = "",
+			},
+			level = 2,
+			minimum_width = 50,
+			render = "default",
 			stages = "slide",
-			max_height = function()
-				return math.floor(vim.o.lines * 0.75)
-			end,
-			max_width = function()
-				return math.floor(vim.o.columns * 0.75)
-			end,
-			on_open = function(win)
-				vim.api.nvim_win_set_config(win, { zindex = 100 })
-			end,
+			timeout = 2000,
 		})
+
 		vim.notify = require("notify")
 	end,
 }
