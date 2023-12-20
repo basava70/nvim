@@ -90,6 +90,11 @@ return {
 					{ "progress", separator = " ", padding = { left = 1, right = 0 } },
 					{ "location", padding = { left = 0, right = 1 } },
 					{ "filename" },
+					{
+						function()
+							return " " .. os.date("%R")
+						end,
+					},
 				},
 				lualine_z = {
 					lsp,
